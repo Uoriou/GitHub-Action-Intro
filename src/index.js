@@ -6,6 +6,8 @@ try {
     const nameToGreet = core.getInput("who-to-greet");
     core.info(`Hello ${nameToGreet}, The commit was successful !`);
 
+    const filesToCheck = core.getInput("file-to-check")
+    core.info(`Task ${filesToCheck}`);
     // Get the current time and set it as an output variable
     const time = new Date().toTimeString();
     core.setOutput("time", time);

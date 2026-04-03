@@ -1,0 +1,22 @@
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  file_job:
+    name: A job to verify changed files 
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Verify Changed files
+        id: verify-changed-files
+        uses: tj-actions/verify-changed-files@v20.0.4
+        with:
+          file-to-check: doSomething.js 
+
+      - name: Get the output 
+        env:
+          CHANGED_FILES: ${{ steps.verify-changed-files.outputs.changed_files }}
+        run: |
+          echo "Changed files: $CHANGED_FILES"
