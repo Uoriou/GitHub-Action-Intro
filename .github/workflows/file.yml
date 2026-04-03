@@ -13,7 +13,7 @@ jobs:
         id: verify-changed-files
         uses: tj-actions/verify-changed-files@v20.0.4
         with:
-          file-to-check: doSomething.js 
+          files: doSomething.js 
 
       - name: Get the output 
         env:
