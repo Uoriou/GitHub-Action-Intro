@@ -32697,19 +32697,22 @@ Octokit.plugin(restEndpointMethods, paginateRest).defaults(defaults);
 
 new Context();
 
+// Can i have two different actions like this in a single index.js file 
 try {
-  // `who-to-greet` input defined in action metadata file
-  const nameToGreet = getInput("who-to-greet");
-  info(`Hello ${nameToGreet}, The commit was successful !`);
+    // `who-to-greet` input defined in action metadata file
+    const nameToGreet = getInput("who-to-greet");
+    info(`Hello ${nameToGreet}, The commit was successful !`);
 
-  // Get the current time and set it as an output variable
-  const time = new Date().toTimeString();
-  setOutput("time", time);
+    //const filesToCheck = core.getInput("files")
+    //core.info(`Task ${filesToCheck}`);
+    // Get the current time and set it as an output variable
+    const time = new Date().toTimeString();
+    setOutput("time", time);
 
-  // Get the JSON webhook payload for the event that triggered the workflow
-  //const payload = JSON.stringify(github.context.payload, undefined, 2);
-  //core.info(`The event payload: ${payload}`);
+    // Get the JSON webhook payload for the event that triggered the workflow
+    //const payload = JSON.stringify(github.context.payload, undefined, 2);
+    //core.info(`The event payload: ${payload}`);
 } catch (error) {
-  setFailed(error.message);
+  	setFailed(error.message);
 }
 //# sourceMappingURL=index.js.map
