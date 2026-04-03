@@ -11,6 +11,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+      - name: Verify Changed files
+        uses: tj-actions/verify-changed-files@v20.0.4
 
       - name: Hello world action step
         id: hello
@@ -21,4 +23,5 @@ jobs:
       # Use the output from the `hello` step
       - name: Get the output time
         run: echo "The time was ${{ steps.hello.outputs.time }}"
-
+      
+  
