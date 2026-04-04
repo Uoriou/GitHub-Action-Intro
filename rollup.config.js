@@ -22,7 +22,8 @@ const config = [{
       sourcemap: true,
     },
     plugins: [commonjs(), nodeResolve({ preferBuiltins: true })],
-  }  
+  },
+   
 ]
 
 export default config;

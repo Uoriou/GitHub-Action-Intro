@@ -28,7 +28,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - uses: ./actions/check-files
+      - uses: ./actions/check_files
         with:
           who-to-say-goodbye: Mario
       # Use the output from the `hello` step
