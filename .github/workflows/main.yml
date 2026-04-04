@@ -21,3 +21,13 @@ jobs:
       # Use the output from the `hello` step
       - name: Get the output time
         run: echo "The time was ${{ steps.hello.outputs.time }}"
+
+  goodbye-job:         # job 2
+    runs-on: ubuntu-latest
+    steps:
+      - uses: ./actions/check-files
+        with:
+          who-to-say-goodbye: Mario
+      # Use the output from the `hello` step
+      - name: Get the output goodbye time
+        run: echo "The time was ${{ steps.hello.outputs.time }}"
